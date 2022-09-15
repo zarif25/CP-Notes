@@ -11,15 +11,14 @@ Another way of thinking about it:\
 `n % k` er mane hocche: `n` theke jotobar possible `k` subtract korar por joto thakbe shetai hocche `n % k`\
 ei `%` niye ja math ase sheita ke amra boli *modular arithmetic*.\
 ### Exercise
-**Input:** Three integers $a$, $b$, $k$\
-**Output:** Print the reminder when $a+b$ is divided by $k$\
-**Constraints:** $0<=a,b<=10^9$ and $0<k<10^9$\
-**Example:**\
-**Input:**
+**Input:** Three integers `a`, `b`, `k`\
+**Output:** Print the reminder when `a+b` is divided by `k`\
+**Constraints:** `0<=a,b<=10^9` and `0<k<10^9`\
+**Example Input:**
 ```
 5 4
 ```
-**Output:**
+**Example Output:**
 ```
 1
 ```
