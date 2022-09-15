@@ -37,12 +37,11 @@ int main() {
 </details>
 
 ## Properties (Part - 1)
-Ektu age jei problem ta korla oitai jodi ektu change kore dei. tahole dekho to problem ta answer thik ashe naki
+Ektu age jei problem ta korla oitai jodi ektu change kore dei. tahole dekho to answer thik ashe naki
 ### Exercise - 1 (*modified*)
 **Input:** Three integers `a`, `b`, `k`\
 **Output:** Print the reminder when `a+b` is divided by `k`\
-~~**Constraints:** `0<=a,b<=10^9` and `0<k<10^9`~~\
-**Constraints:** `0<=a,b<=2*10^9` and `0<k<10^9`\
+**Constraints:** ~~`0<=a,b<=10^9`~~`0<=a,b<=2*10^9` and `0<k<10^9`\
 **Example Input:**
 ```
 2000000000 2000000000 5
