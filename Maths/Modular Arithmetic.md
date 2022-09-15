@@ -13,7 +13,7 @@ Another way of thinking about it:\
 
 ei `%` niye ja math ase sheita ke bola hoy *modular arithmetic*.
 
-### Exercise - 1
+### Exercise-1
 **Input:** Three integers `a`, `b`, `k`\
 **Output:** Print the reminder when `a+b` is divided by `k`\
 **Constraints:** `0<=a,b<=10^9` and `0<k<10^9`\
@@ -26,7 +26,7 @@ ei `%` niye ja math ase sheita ke bola hoy *modular arithmetic*.
 1
 ```
 <details>
-<summary>Click here to view solution of Exercise - 1</summary>
+<summary>Click here to view solution of Exercise-1</summary>
 
 ```c
 #include <stdio.h>
@@ -41,7 +41,7 @@ int main() {
 
 ## Properties (Part - 1)
 Ektu age jei problem ta korlen oitai jodi ektu change kore dei. tahole dekhen to answer thik ashe naki
-### Exercise - 2 11
+### Exercise-2
 **Input:** Three integers `a`, `b`, `k`\
 **Output:** Print the reminder when `a+b` is divided by `k`\
 **Constraints:** ~~`0<=a,b<=10^9`~~ `0<=a,b<=2*10^9` and `0<k<10^9`\
@@ -71,24 +71,26 @@ Output:
 Areh! jog korlam duita positive number ar jogfol pelam negative number!\
 Eitar karon hocche `a` ebong `b` er data type hocche `int`. `int` data type shorbochcho `2147483647` and shorbonimno `-2147483648` store korte pare. ei range er bahire store korte gelei jhamela hoy.\
 Ekhon mone hoy bujhte perechen je keno amader ager problem er solution, ei problem er jonne kaj korchilo na. Karon constraints change kore dawar karone, ekhon boro shongkhar number input dile `int` data type er variable ar number ta store korte parche na.\
-Tahole solution ki?\
-Jara `long long` data type er nam shunecho tara mone hoy already ekta solution ber kore felecho. `int` na bebohar kore `long long` bebohar korlei to hoy.\
-Hae thik. `long long` bebohar korlei hoye jae. Tobe arekta solution ache jeita amra `int` diyei korte parbo.\
+Tahole solution ki?
+
+Jara `long long` data type er nam shunechen tara nishchoi bhabchen je, `int` na bebohar kore `long long` bebohar korlei to hoy.
+
+Hae, thik. `long long` bebohar korlei hoye jae. Tobe arekta solution ache jeita amra `int` diyei korte parbo.\
 Ei solution ta dekhar age ekta modulo operator er ekta property jante hobe.\
 
 ### Property-1: `(a + b) % k = (a % k + b % k) % k`
 **Proof:**
-> Proof ta porar age ekbar nije nije cheshta koro kibhabe eita proman kora jae. ekta hint dei: uttor dekhar por mone hobe, "Ayhay, eto shohoj chilo!"
+> Proof ta porar age ekbar nije nije cheshta kore dekhen. ekta hint dei: uttor dekhar por mone hobe, "Ayhay, eto shohoj chilo!"
 
-Asha kori cheshta korecho. Ekhon tahole milie nao.\
-Dhoro, `a` ke jodi `k` dara bhag kori tahole bhagfol `p` ebong bhangshesh `q`\
-Ekibhabe dhoro, `b` ke jodi `k` dara bhag kori tahole bhagfol `r` ebong bhangshesh `s`\
+Asha kori cheshta korechen. Ekhon tahole milie nin.\
+Dhorun, `a` ke jodi `k` dara bhag kori tahole bhagfol `p` ebong bhangshesh `q`\
+Ekibhabe dhorun, `b` ke jodi `k` dara bhag kori tahole bhagfol `r` ebong bhangshesh `s`\
 Tahole amra bolte pari je,\
 `a % k = q -----------(i)`\
 `b % k = s -----------(ii)`\
 `a = pk + q ----------(iii)`\
 `b = rk + s ----------(iv)`
-> Jodi tumi cheshta koreo proman na korte paro tahole baki ongsho porar age arekbar cheshta kore dekho
+> Jodi apni cheshta koreo proman na korte paren tahole baki ongsho porar age arekbar cheshta kore dekhen
 
 Ekhon, LHS e jodi `a` ar `b` ke boshiye dei tahole amra pabo:\
 `(a + b) % k`\
@@ -96,8 +98,10 @@ Ekhon, LHS e jodi `a` ar `b` ke boshiye dei tahole amra pabo:\
 `= ((p + r) * k + (q + s)) % k`\
 `= (q + s) % k`\
 `= (a % k + b % k) % k` [From `(i)` and `(ii)`]
+
+Exercise-2 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon cheshta kore dekhte paren je Property-1 er shahajje solve korte paren naki.
 <details>
-<summary>Solution</summary>
+<summary>Solution of Exercise-2</summary>
 
 ```c
 #include <stdio.h>
