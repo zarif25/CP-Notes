@@ -72,7 +72,8 @@ Tahole solution ki?\
 Jara `long long` data type er nam shunecho tara mone hoy already ekta solution ber kore felecho. `int` na bebohar kore `long long` bebohar korlei to hoy.\
 Hae thik. `long long` bebohar korlei hoye jae. Tobe arekta solution ache jeita amra `int` diyei korte parbo.\
 Ei solution ta dekhar age ekta modulo operator er ekta property jante hobe.\
-**Property-1:** `(a + b) % k = (a % k + b % k) %k`\
+
+### Property-1: `(a + b) % k = (a % k + b % k) %k`\
 **Proof:**
 > Proof ta porar age ekbar nije nije cheshta koro kibhabe eita proman kora jae. ekta hint dei: uttor dekhar por mone hobe, "Ayhay, eto shohoj chilo!"
 
