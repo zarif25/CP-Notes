@@ -1,5 +1,15 @@
 # Modular Arithmetic
 
+## Table of content
+- [Modular Arithmetic](#modular-arithmetic)
+  - [Table of content](#table-of-content)
+  - [Modular arithmetic ki jinish?](#modular-arithmetic-ki-jinish)
+    - [Exercise-1](#exercise-1)
+    - [Exercise-2](#exercise-2)
+  - [Properties (Part - 1)](#properties-part---1)
+    - [Exercise-3](#exercise-3)
+    - [Property-1: `(a + b) % k = (a % k + b % k) % k`](#property-1-a--b--k--a--k--b--k--k)
+
 ## Modular arithmetic ki jinish?
 `n % k` mane hocche, `n` ke `k` dara bhag korle, jei remainder pabo sheita\
 jemon:\
@@ -14,12 +24,12 @@ Another way of thinking about it:\
 ei `%` niye ja math ase sheita ke bola hoy *modular arithmetic*.
 
 ### Exercise-1
-**Input:** Three integers `a`, `b`, `k`\
-**Output:** Print the reminder when `a+b` is divided by `k`\
+**Input:** Two integers `a`, `k`\
+**Output:** Print the reminder when `a` is divided by `k` without using the `%` operator.\
 **Constraints:** `0<=a,b<=10^9` and `0<k<10^9`\
 **Example Input:**
 ```
-10000000000 10000000000 4
+4 4
 ```
 **Example Output:**
 ```
@@ -27,6 +37,34 @@ ei `%` niye ja math ase sheita ke bola hoy *modular arithmetic*.
 ```
 <details>
 <summary>Click here to view solution of Exercise-1</summary>
+
+```c
+#include <stdio.h>
+int main() {
+  int a, k;
+  scanf("%d %d", &a, &k);
+  // n theke jotobar possible k subtract korar por jeta thakbe shetai hocche n % k
+  while(a >= k) a -= k;
+  printf("%d", a);
+  return 0;
+}
+```
+</details>
+
+### Exercise-2
+**Input:** Three integers `a`, `b`, `k`\
+**Output:** Print the reminder when `a+b` is divided by `k`\
+**Constraints:** `0<=a,b<=10^9` and `0<k<10^9`\
+**Example Input:**
+```
+3 2 4
+```
+**Example Output:**
+```
+1
+```
+<details>
+<summary>Click here to view solution of Exercise-2</summary>
 
 ```c
 #include <stdio.h>
@@ -41,7 +79,7 @@ int main() {
 
 ## Properties (Part - 1)
 Ektu age jei problem ta korlen oitai jodi ektu change kore dei. tahole dekhen to answer thik ashe naki
-### Exercise-2
+### Exercise-3
 **Input:** Three integers `a`, `b`, `k`\
 **Output:** Print the reminder when `a+b` is divided by `k`\
 **Constraints:** ~~`0<=a,b<=10^9`~~ `0<=a,b<=2*10^9` and `0<k<10^9`\
@@ -76,7 +114,7 @@ Tahole solution ki?
 Jara `long long` data type er nam shunechen tara nishchoi bhabchen je, `int` na bebohar kore `long long` bebohar korlei to hoy.
 
 Hae, thik. `long long` bebohar korlei hoye jae. Tobe arekta solution ache jeita amra `int` diyei korte parbo.\
-Ei solution ta dekhar age ekta modulo operator er ekta property jante hobe.\
+Ei solution ta dekhar age ekta modulo operator er ekta property jante hobe.
 
 ### Property-1: `(a + b) % k = (a % k + b % k) % k`
 **Proof:**
@@ -99,9 +137,9 @@ Ekhon, LHS e jodi `a` ar `b` ke boshiye dei tahole amra pabo:\
 `= (q + s) % k`\
 `= (a % k + b % k) % k` [From `(i)` and `(ii)`]
 
-Exercise-2 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon cheshta kore dekhte paren je Property-1 er shahajje solve korte paren naki.
+Exercise-3 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon cheshta kore dekhte paren je Property-1 er shahajje solve korte paren naki.
 <details>
-<summary>Solution of Exercise-2</summary>
+<summary>Solution of Exercise-3</summary>
 
 ```c
 #include <stdio.h>
