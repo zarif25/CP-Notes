@@ -50,7 +50,7 @@ Ektu age jei problem ta korla oitai jodi ektu change kore dei. tahole dekho to a
 ```
 0
 ```
-Jodi ager problem er solution e example input er value tula input koro tahole output ashbe `-1`. Kintu keno? `4000000000` ki `5` diye bhag korle bhagshesh `-1` hoy? Nah, output `0` ashar kotha. Ar negative number to bhuleo ashar kotha na.\
+Jodi ager problem er solution e example input er value gula input koro tahole output ashbe `-1`. Kintu keno? `4000000000` ki `5` diye bhag korle bhagshesh `-1` hoy? Nah, output `0` ashar kotha. Ar negative number to bhuleo ashar kotha na.\
 Tahole keno emon holo?\
 Eitar karon bujhar jonne nicher code ta run kore dekho.
 ```c
@@ -67,10 +67,31 @@ Output:
 ```
 Areh, jog korlam duita positive number ar jogfol pelam negative number!\
 Eitar karon hocche `a` ebong `b` er data type hocche `int`. `int` data type shorbochcho `2147483647` and shorbonimno `-2147483648` store korte pare. ei range er bahire store korte gelei jhamela hoy.\
-Ekhon mone hoy bujhte parcho je keno amader ager problem er solution ei problem er jonne kaj korche na. Karon constraints change kore dawar karone, ekhon boro shongkhar number input dile `int` data type er variable ar number ta store korte parche na.\
+Ekhon mone hoy bujhte perecho je keno amader ager problem er solution, ei problem er jonne kaj korche na. Karon constraints change kore dawar karone, ekhon boro shongkhar number input dile `int` data type er variable ar number ta store korte parche na.\
 Tahole solution ki?\
-Jara `long long` data type er nam shunecho tara mone hoy ekta solution already ekta solution ber kore felecho. `int` na bebohar kore `long long` bebohar korlei to hoy.\
-Hae thik. `long long` bebohar korlei hoye jae. Tobe arekta solution ache jeita amra `int` diyei korte parbo.
+Jara `long long` data type er nam shunecho tara mone hoy already ekta solution ber kore felecho. `int` na bebohar kore `long long` bebohar korlei to hoy.\
+Hae thik. `long long` bebohar korlei hoye jae. Tobe arekta solution ache jeita amra `int` diyei korte parbo.\
+Ei solution ta dekhar age ekta modulo operator er ekta property jante hobe.\
+**Property-1:** `(a + b) % k = (a % k + b % k) %k`\
+**Proof:**
+> Proof ta porar age ekbar nije nije cheshta koro kibhabe eita proman kora jae. ekta hint dei: uttor dekhar por mone hobe, "Ayhay, eto shohoj chilo!"
+
+Asha kori cheshta korecho. Ekhon tahole milie nao.\
+Dhoro, `a` ke jodi `k` dara bhag kori tahole bhagfol `p` ebong bhangshesh `q`\
+Ekibhabe dhoro, `b` ke jodi `k` dara bhag kori tahole bhagfol `r` ebong bhangshesh `s`\
+Tahole amra bolte pari je,\
+`a % k = q -----------(i)`\
+`b % k = s -----------(ii)`\
+`a = pk + q ----------(iii)`\
+`b = rk + s ----------(iv)`
+> Jodi tumi cheshta koreo proman na korte paro tahole baki ongsho porar age arekbar cheshta kore dekho
+
+Ekhon, LHS e jodi `a` ar `b` ke boshiye dei tahole amra pabo:\
+`(a + b) % k`\
+`= (pk + q + rk + s) % k` [From `(iii)` and `(iv)`]\
+`= ((p + r) * k + (q + s)) % k`\
+`= (q + s) % k`\
+`= (a % k + b % k) % k` [From `(i)` and `(ii)`]
 <details>
 <summary>Solution</summary>
 
