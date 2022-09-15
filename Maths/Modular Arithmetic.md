@@ -16,9 +16,22 @@ ei `%` niye ja math ase sheita ke amra boli *modular arithmetic*.\
 **Constraints:** `0<=a,b<=10^9` and `0<k<10^9`\
 **Example Input:**
 ```
-5 4
+2 3 4
 ```
 **Example Output:**
 ```
 1
 ```
+<details>
+<summary>Solution</summary>
+
+```c
+#include <stdio.h>
+int main() {
+  int a, b, k;
+  scanf("%d %d %d", &a, &b, &k);
+  printf("%d", (a + b) % k);
+  return 0;
+}
+```
+</details>
