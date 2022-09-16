@@ -11,6 +11,8 @@
   - [Properties (Part - 1)](#properties-part---1)
     - [Exercise-4](#exercise-4)
     - [Property-1: `(a + b) % k = (a % k + b % k) % k`](#property-1-a--b--k--a--k--b--k--k)
+    - [Property-2: `(a * b) % k = (a % k * b % k) % k`](#property-2-a--b--k--a--k--b--k--k)
+    - [Exercise-5](#exercise-5)
 
 ## Modular arithmetic ki jinish?
 `n % k` mane hocche, `n` ke `k` dara bhag korle, jei remainder pabo sheita\
@@ -144,7 +146,7 @@ Example-2 te jei problem ta korlen oitai jodi ektu change kore dei. tahole dekhe
 ```
 0
 ```
-Jodi Example-1 er solution e Example-2 'Example input' er value gula input koren tahole output ashbe `-1`. Kintu keno? `4000000000` ki `5` diye bhag korle bhagshesh `-1` hoy? Nah, output `0` ashar kotha. Ar negative number to bhuleo ashar kotha na.\
+Jodi Exercise-2 er solution e Exercise-4 er 'Example input' er value gula input koren tahole output ashbe `-1`. Kintu keno? `4000000000` ki `5` diye bhag korle bhagshesh `-1` hoy? Nah, output `0` ashar kotha. Ar negative number to bhuleo ashar kotha na.\
 Tahole keno emon holo?\
 Eitar karon bujhar jonne nicher code ta run kore dekhen.
 ```c
@@ -188,7 +190,7 @@ Ekhon, LHS e jodi `a` ar `b` ke boshiye dei tahole amra pabo:\
 `= (pk + q + rk + s) % k` [From `(iii)` and `(iv)`]\
 `= ((p + r) * k + (q + s)) % k`\
 `= (q + s) % k`\
-`= (a % k + b % k) % k` [From `(i)` and `(ii)`]
+`= ((a % k) + (b % k)) % k` [From `(i)` and `(ii)`]
 
 Exercise-4 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon cheshta kore dekhte paren je Property-1 er shahajje solve korte paren naki.
 <details>
@@ -199,7 +201,36 @@ Exercise-4 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon che
 int main() {
   int a, b, k;
   scanf("%d %d %d", &a, &b, &k);
-  printf("%d\n", (a % k + b % k) % k);
+  printf("%d\n", ((a % k) + (b % k)) % k);
+  return 0;
+}
+```
+</details>
+
+### Property-2: `(a * b) % k = (a % k * b % k) % k`
+Property-1 er proof bujhe thakle eitao proman korte parben. Tai eita niye ar proof likhlam na
+
+### Exercise-5
+**Input:** Three integers `a`, `b`, `k`\
+**Output:** Print the reminder when `a*b` is divided by `k`\
+**Constraints:** `0<=a,b<=10^9` and `0<k<=10000`\
+**Example Input:**
+```
+99999998 99999998 9999
+```
+**Example Output:**
+```
+1
+```
+<details>
+<summary>Solution of Exercise-5</summary>
+
+```c
+#include <stdio.h>
+int main() {
+  int a, b, k;
+  scanf("%d %d %d", &a, &b, &k);
+  printf("%d\n", ((a % k) * (b % k)) % k);
   return 0;
 }
 ```
