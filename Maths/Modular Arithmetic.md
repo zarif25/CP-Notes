@@ -27,7 +27,7 @@ ei `%` niye ja math ase sheita ke bola hoy *modular arithmetic*.
 
 ### Exercise-1
 **Input:** Two integers `a`, `k`\
-**Output:** Print the reminder when `a` is divided by `k` without using the `%` operator.\
+**Output:** Print the reminder when `a` is divided by `k` (without using the `%` operator).\
 **Constraints:** `0<=a<=10^9` and `0<k<10^9`\
 **Example Input:**
 ```
@@ -88,10 +88,16 @@ Jemon:\
 `-7 % 4 = 1`\
 karon, `-7` er shathe dui bar `4` jog korle non-negative number pawa jae: `-7 + 4 + 4 = 1`, ebong 2 bar jog korar por amra result pai `1`
 
+Achcha ekhon nicher code ta likhe deken to compiler amader shathe ekmot naki.
+```c
+printf("%d", (-7) % 4);
+```
+Output ashche, `-3`. Hmm... Compiler ki bhul korlo? Nah compiler bhul kore nai. Tobe keno emon output ashlo? Ei proshner uttor ektu pore dichchi. Age ei problem ta solve kore nin.
+
 ### Exercise-3
 **Input:** Two integers `a`, `k`\
-**Output:** Print the reminder when `a` is divided by `k` without using the `%` operator.\
-**Constraints:** `0>a>=10^9` and `0<k<10^9`\
+**Output:** Print the reminder when `a` is divided by `k` (without using the `%` operator).\
+**Constraints:** `-10^9>=a>0` and `0<k<10^9`\
 **Example Input:**
 ```
 -7 4
@@ -116,8 +122,16 @@ int main() {
 ```
 </details>
 
+Ekhon uttor dei je `%` bebohar korle keno compiler `1` er jaegae `-3` output dey. Ashole, C compiler directly negative number er modulo operation korte pare na. Tai `-7 % 4` er maan ber korte bolle compiler `- (7 % 4)` er maan ber kore.
+
+Tahole negative number er modulo kibhabe ber korbo?\
+Example-3 er solution er moto `while` loop bebohar kore ber korte paren.\
+Tobe tar theke better ekta solution ache jodi amra ekta formula jene thaki.\
+Formula ta hocche: `(-x) % k = (k - (x % k)) % k`\
+Eitar proof dekhar age kichu properties shomporke jante hobe.
+
 ## Properties (Part - 1)
-Ektu age jei problem ta korlen oitai jodi ektu change kore dei. tahole dekhen to answer thik ashe naki
+Example-2 te jei problem ta korlen oitai jodi ektu change kore dei. tahole dekhen to answer thik ashe naki.
 ### Exercise-4
 **Input:** Three integers `a`, `b`, `k`\
 **Output:** Print the reminder when `a+b` is divided by `k`\
@@ -136,7 +150,7 @@ Eitar karon bujhar jonne nicher code ta run kore dekhen.
 ```c
 #include <stdio.h>
 int main() {
-  int a = 20'000'000'000, b = 20'000'000'000;
+  int a = 20000000000, b = 20000000000;
   printf("%d\n", a + b);
   return 0;
 }
