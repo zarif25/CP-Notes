@@ -55,6 +55,9 @@ int main() {
 ```
 </details>
 
+Arekta jinish bole rakhi. `%` er precedence `+`,`-`,`*`,`/` er age.
+So, `1 + 3 % 4 = 4` and `(1 + 3) % 4 = 0`
+
 ### Exercise-2
 **Input:** Three integers `a`, `b`, `k`\
 **Output:** Print the reminder when `a+b` is divided by `k`\
@@ -190,7 +193,7 @@ Ekhon, LHS e jodi `a` ar `b` ke boshiye dei tahole amra pabo:\
 `= (pk + q + rk + s) % k` [From `(iii)` and `(iv)`]\
 `= ((p + r) * k + (q + s)) % k`\
 `= (q + s) % k`\
-`= ((a % k) + (b % k)) % k` [From `(i)` and `(ii)`]
+`= (a % k + b % k) % k` [From `(i)` and `(ii)`]
 
 Exercise-4 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon cheshta kore dekhte paren je Property-1 er shahajje solve korte paren naki.
 <details>
@@ -230,7 +233,7 @@ Property-1 er proof bujhe thakle eitao proman korte parben. Tai eita niye ar pro
 int main() {
   int a, b, k;
   scanf("%d %d %d", &a, &b, &k);
-  printf("%d\n", ((a % k) * (b % k)) % k);
+  printf("%d\n", (a % k * b % k) % k);
   return 0;
 }
 ```
