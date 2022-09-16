@@ -13,6 +13,7 @@
     - [Property-1: `(a + b) % k = (a % k + b % k) % k`](#property-1-a--b--k--a--k--b--k--k)
     - [Property-2: `(a * b) % k = (a % k * b % k) % k`](#property-2-a--b--k--a--k--b--k--k)
     - [Exercise-5](#exercise-5)
+    - [Property-3: `(a - b) % k = (a % k - b % k + k) % k`](#property-3-a---b--k--a--k---b--k--k--k)
 
 ## Modular arithmetic ki jinish?
 `n % k` mane hocche, `n` ke `k` dara bhag korle, jei remainder pabo sheita\
@@ -238,3 +239,12 @@ int main() {
 }
 ```
 </details>
+
+### Property-3: `(a - b) % k = (a % k - b % k + k) % k`
+Property-1 er proof bujhe thakle eitao motamoti bujhte parben. Tobe, bracket er majhe `k` keno jog korlam oita bujhte ektu ashubidha hoite pare.
+
+Property-1 ar Property-2 te `a` ebong `b` duita number positive hoile `a % k + b % k` ar `a % k * b % k` o positive e hobe. Tope, Property-3 te `b % k` jodi `a % k` er theke boro hoy tahole, bracket er bhetorer ongsho, orthat `a % k - b % k + k` negative hobe. Ebong amra jani je negative number er modulo ber korar moddhe ekta jhamela ase. Tai amader ke `k` jog korte hobe.
+
+Ekhon proshno ashte pare je achcha `k` jog korar pore ki bracket er bhetorer onghsho negative ashte pare na? Eitar uttor khujar dayitto apnar upor chere dilam 😅
+
+Ektu age [Negative number er modulo kibhabe ber korbo?](#negative-number-er-modulo-kibhabe-ber-korbo) section e ekta formula er kotha bolechilam: `(-x) % k = (k - (x % k)) % k`. Dekhen te eita derive korte paren naki Property-3 theke.
