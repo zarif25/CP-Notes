@@ -6,8 +6,10 @@
   - [Modular arithmetic ki jinish?](#modular-arithmetic-ki-jinish)
     - [Exercise-1](#exercise-1)
     - [Exercise-2](#exercise-2)
-  - [Properties (Part - 1)](#properties-part---1)
+  - [Negative number er modulo kibhabe ber korbo?](#negative-number-er-modulo-kibhabe-ber-korbo)
     - [Exercise-3](#exercise-3)
+  - [Properties (Part - 1)](#properties-part---1)
+    - [Exercise-4](#exercise-4)
     - [Property-1: `(a + b) % k = (a % k + b % k) % k`](#property-1-a--b--k--a--k--b--k--k)
 
 ## Modular arithmetic ki jinish?
@@ -26,7 +28,7 @@ ei `%` niye ja math ase sheita ke bola hoy *modular arithmetic*.
 ### Exercise-1
 **Input:** Two integers `a`, `k`\
 **Output:** Print the reminder when `a` is divided by `k` without using the `%` operator.\
-**Constraints:** `0<=a,b<=10^9` and `0<k<10^9`\
+**Constraints:** `0<=a<=10^9` and `0<k<10^9`\
 **Example Input:**
 ```
 4 4
@@ -77,9 +79,46 @@ int main() {
 ```
 </details>
 
+## Negative number er modulo kibhabe ber korbo?
+Achcha chinta koren to `-3 % 4` koto hobe? Ektu confusing lage na?
+
+Negative number er jonne definition ta ektu onno rokom. Dhorun `n` ekta negative number. `n` ke non-negative number banate joto kom bar `k` add kora lage totobar add korar por jei number ta pabo shetai hocche `n%k`
+
+Jemon:\
+`-7 % 4 = 1`\
+karon, `-7` er shathe dui bar `4` jog korle non-negative number pawa jae: `-7 + 4 + 4 = 1`, ebong 2 bar jog korar por amra result pai `1`
+
+### Exercise-3
+**Input:** Two integers `a`, `k`\
+**Output:** Print the reminder when `a` is divided by `k` without using the `%` operator.\
+**Constraints:** `0>a>=10^9` and `0<k<10^9`\
+**Example Input:**
+```
+-7 4
+```
+**Example Output:**
+```
+1
+```
+<details>
+<summary>Click here to view solution of Exercise-3</summary>
+
+```c
+#include <stdio.h>
+int main() {
+  int a, k;
+  scanf("%d %d", &a, &k);
+  // jotokkhon a < 0 totokkhon a er shathe k add korte hobe
+  while(a < 0) a += k;
+  printf("%d", a);
+  return 0;
+}
+```
+</details>
+
 ## Properties (Part - 1)
 Ektu age jei problem ta korlen oitai jodi ektu change kore dei. tahole dekhen to answer thik ashe naki
-### Exercise-3
+### Exercise-4
 **Input:** Three integers `a`, `b`, `k`\
 **Output:** Print the reminder when `a+b` is divided by `k`\
 **Constraints:** ~~`0<=a,b<=10^9`~~ `0<=a,b<=2*10^9` and `0<k<10^9`\
@@ -137,9 +176,9 @@ Ekhon, LHS e jodi `a` ar `b` ke boshiye dei tahole amra pabo:\
 `= (q + s) % k`\
 `= (a % k + b % k) % k` [From `(i)` and `(ii)`]
 
-Exercise-3 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon cheshta kore dekhte paren je Property-1 er shahajje solve korte paren naki.
+Exercise-4 solve korar jonne ja shikha lagbe shob shikha hoye giyeche. Ekhon cheshta kore dekhte paren je Property-1 er shahajje solve korte paren naki.
 <details>
-<summary>Solution of Exercise-3</summary>
+<summary>Solution of Exercise-4</summary>
 
 ```c
 #include <stdio.h>
